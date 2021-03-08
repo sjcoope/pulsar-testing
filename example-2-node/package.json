@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-pulsar": "",
     "test-exclusive": "ttab -a iTerm2 -t 'Consumer 1' 'node exclusive/consumer1.js'; ttab -a iTerm2 -t 'Consumer 2' 'node exclusive/consumer2.js'; ttab -a iTerm2 -t 'Producer' 'node exclusive/producer.js'",
     "test-failover": "ttab -a iTerm2 -t 'Consumer 1' 'node failover/consumer1.js'; ttab -a iTerm2 -t 'Consumer 2' 'node failover/consumer2.js'; ttab -a iTerm2 -t 'Producer' 'node failover/producer.js'",
     "test-key-shared": "ttab -a iTerm2 -t 'Consumer 1' 'node key_shared/consumer1.js'; ttab -a iTerm2 -t 'Consumer 2' 'node key_shared/consumer2.js'; ttab -a iTerm2 -t 'Producer' 'node key_shared/producer.js'",
