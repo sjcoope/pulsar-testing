@@ -1,8 +1,10 @@
 var Pulsar = require('pulsar-client');
+var config = require('../config')
 
 async function consumerExample() {
+  
     const client = new Pulsar.Client({
-        serviceUrl: 'pulsar://localhost:6650',
+      serviceUrl: config.pulsarServiceUrl,
     });
 
     const consumer = await client.subscribe({
@@ -13,11 +15,11 @@ async function consumerExample() {
 
     // Receive messages
     for (let i = 0; i < 5; i += 1) {
-        const msg = await consumer.receive();
-        console.log(msg.getData().toString());
-        consumer.acknowledge(msg);
-      }
-  
+      const msg = await consumer.receive();
+      console.log(msg.getData().toString());
+      consumer.acknowledge(msg);
+    }
+
     await consumer.close();
     await client.close();
 }

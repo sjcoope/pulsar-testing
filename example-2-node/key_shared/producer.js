@@ -1,9 +1,10 @@
 var Pulsar = require('pulsar-client');
+var config = require('../config')
 
 async function producerExample() {
 
     const client = new Pulsar.Client({
-        serviceUrl: 'pulsar://localhost:6650',
+        serviceUrl: config.pulsarServiceUrl,
     });
 
     const producer = await client.createProducer({
